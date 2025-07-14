@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome | Algonimo</title>
+  <link rel="stylesheet" href="algonimo .css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="particles"></div>
+  <div class="ai-bg"></div>
+
+  <div class="container">
+    <div class="header">
+      <h1 style="display: flex; align-items: center; gap: 15px; font-family: 'Orbitron', sans-serif; color: #00ffe7; text-shadow: 0 0 6px #00ffe7, 0 0 12px #00bfa6;">
+        <img src="img/bot1.png" alt="Algonimo Logo" style="height: 50px; width: 50px; border-radius: 50%; box-shadow: 0 0 10px #00ffe7; transition: transform 0.3s ease;" 
+        onmouseover="this.style.transform='scale(1.1)'" 
+        onmouseout="this.style.transform='scale(1)'">
+        ALGONIMO
+      </h1>
+    </div>
+  </div>
+
+  <div class="ai-avatar-container">
+    <div id="avatar" class="lottie-avatar"></div>
+  </div>
+
+  <div class="welcome-container">
+    <h1>Welcome to <span class="highlight">Algonimo</span></h1>
+    <p>Algonimo is your smart, fearless, and friendly CodeBot. Whether you're just starting out or diving into advanced logic, Algonimo is here to help you write better code, faster.</p>
+    <ul>
+      <li>💡 Explains programming basics and concepts</li>
+      <li>🚀 Helps you grow from beginner to pro</li>
+    </ul>
+    <p class="tagline">"Think. Code. Conquer." – with Algonimo.</p>
+    <a href="b.html" class="start-btn">🚀 Start Exploring</a>
+    <a href="#" onclick="logout()" class="start-btn">🔒 Logout</a>
+  </div>
+
+  <!-- Lottie JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.6/lottie.min.js"></script>
+  <script src="algonimo.js"></script>
+
+  <!-- Auth check logic -->
+  <script>
+    const user = localStorage.getItem("loggedInUser");
+
+    if (!user) {
+      window.location.href = "login.html";
+    } else {
+      const nameInsert = document.createElement("p");
+      nameInsert.style.cssText = "text-align:center; font-size: 18px; color:#00ffe7; margin-top: 15px;";
+      nameInsert.innerHTML = `👋 Hello, <strong>${user}</strong>!`;
+      document.querySelector(".welcome-container").prepend(nameInsert);
+    }
+
+    function logout() {
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

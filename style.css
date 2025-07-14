@@ -1,0 +1,103 @@
+/* Base */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: #0e0e0e;
+  overflow: hidden;
+  height: 100vh;
+  color: #00ffe0;
+}
+
+/* Particle Background */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #00ffe0 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: move 10s linear infinite;
+  opacity: 0.05;
+}
+
+@keyframes move {
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
+}
+
+/* Center Box */
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-box {
+  background: rgba(0, 255, 224, 0.1);
+  border: 1px solid #00ffe0;
+  border-radius: 15px;
+  padding: 30px;
+  width: 320px;
+  box-shadow: 0 0 20px #00ffe0;
+  backdrop-filter: blur(10px);
+  transition: 0.5s ease;
+  z-index: 2;
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 2px solid #00ffe0;
+  color: #fff;
+  transition: 0.3s;
+}
+
+form input:focus {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #00ffe0;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  background: #00d5b0;
+}
+
+#toggleText {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+#toggleBtn {
+  color: #00ffe0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#emailField {
+  display: none;
+}
+

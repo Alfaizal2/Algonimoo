@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodeBot - Programming Assistant</title>
+  <link rel="stylesheet" href="b.css" />
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Header with logo and controls -->
+    <div class="header">
+      <h1 style="
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffe7;
+  text-shadow: 0 0 6px #00ffe7, 0 0 12px #00bfa6;
+">
+  <img src="img/bot.jpg" alt="Algonimo Logo" style="
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ffe7;
+    transition: transform 0.3s ease;
+  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+  ALGONIMO
+</h1>
+
+<!-- Include Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+      <div class="header-options">
+        <!-- Theme Selector -->
+        <select id="theme-select">
+          <option value="default">🟣 Default</option>
+          <option value="ocean">🌊 Ocean</option>
+          <option value="forest">🌲 Forest</option>
+          <option value="sunset">🌅 Sunset</option>
+        </select>
+
+        <!-- Bot Selector -->
+        <select id="bot-select">
+          <option value="general">🤖 General</option>
+          <option value="common Q&A">Common Q&A</option>
+          <option value="js">🟨 JavaScript Bot</option>
+          <option value="python">🐍 Python Bot</option>
+          <option value="html">🔤 HTML Bot</option>
+          <option value="interviwe">🔤 INTERVIWE Bot</option>
+          
+        </select>
+
+        <!-- Avatar Upload -->
+        <input type="file" id="avatar-upload" accept="image/*" title="Upload Custom Avatar" />
+
+      </div>
+    </div>
+
+    <!-- Chat Box -->
+    <div id="chat-box" class="chat-box"></div>
+
+    <!-- Suggestions -->
+    <div class="suggestions" id="suggestions-box"></div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+      <input type="text" id="user-input" placeholder="Ask me anything about programming..." autocomplete="off" />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Extra Controls -->
+    <div class="btn-group">
+      <button onclick="copyChat()">📋 Copy</button>
+      <button onclick="downloadChat()">⬇️ Download</button>
+      <button onclick="clearChat()">🗑️ Clear</button>
+    </div>
+    
+  </div>
+
+  <!-- Modular Bot Files -->
+  <script src="Bot/common/com.js"></script>
+<script src="Bot/javascript/js.js"></script>
+<script src="Bot/python/py.js"></script>
+<script src="Bot/HTML/html.js"></script>
+<script src="Bot/interview/interview .js"></script>
+
+<!-- Main Logic -->
+<script src="b.js"></script>
+  
+</body>
+</html>
